@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.musicapp.presentation.viewmodels.MainViewModel" />
+
+        <variable
+            name="artistNames"
+            type="java.util.List&lt;String&gt;" />
+
+        <variable
+            name="listener"
+            type="com.example.musicapp.presentation.fragments.MainFragment.MainFragmentListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавление композиции"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Название:" />
+
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@={viewModel.songTitle}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Исполнитель:" />
+
+            <Spinner
+                android:id="@+id/spinnerArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:entries="@{artistNames}" />
+
+            <Button
+                android:id="@+id/buttonAddArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить исполнителя"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> listener.onAddArtistClick()}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Длительность (MM:SS):" />
+
+            <EditText
+                android:id="@+id/editTextDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@={viewModel.songDuration}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Жанр:" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <RadioButton
+                    android:id="@+id/radioButtonPop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Поп"
+                    android:checked="@{viewModel.selectedGenre == &quot;Поп&quot;}"
+                    android:onClick="@{() -> viewModel.setSelectedGenre(&quot;Поп&quot;)}" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonRock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Рок"
+                    android:checked="@{viewModel.selectedGenre == &quot;Рок&quot;}"
+                    android:onClick="@{() -> viewModel.setSelectedGenre(&quot;Рок&quot;)}" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonJazz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Джаз"
+                    android:checked="@{viewModel.selectedGenre == &quot;Джаз&quot;}"
+                    android:onClick="@{() -> viewModel.setSelectedGenre(&quot;Джаз&quot;)}" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonRap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Рэп"
+                    android:checked="@{viewModel.selectedGenre == &quot;Рэп&quot;}"
+                    android:onClick="@{() -> viewModel.setSelectedGenre(&quot;Рэп&quot;)}" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить"
+                android:layout_marginBottom="8dp"
+                android:onClick="@{() -> listener.onAddSongClick()}" />
+
+            <Button
+                android:id="@+id/buttonClear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Очистить форму"
+                android:onClick="@{() -> listener.onClearClick()}" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

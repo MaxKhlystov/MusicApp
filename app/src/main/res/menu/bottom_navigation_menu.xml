@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_add"
+        android:title="Добавить"
+        android:icon="@android:drawable/ic_input_add" />
+    <item
+        android:id="@+id/navigation_songs"
+        android:title="Песни"
+        android:icon="@android:drawable/ic_menu_view" />
+    <item
+        android:id="@+id/navigation_search"
+        android:title="Поиск"
+        android:icon="@android:drawable/ic_menu_search" />
+    <item
+        android:id="@+id/navigation_analytics"
+        android:title="Анализ"
+        android:icon="@android:drawable/ic_menu_info_details" />
+</menu>

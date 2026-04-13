@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Управление файлами"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!--app specific-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App-specific storage:"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/btnSaveBinaryApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить бинарный файл"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnLoadBinaryApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Загрузить бинарный файл"
+        android:layout_marginBottom="16dp" />
+
+    <!--shared-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shared storage:"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/btnExportBinaryShared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Экспорт бинарного файла"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnImportBinaryShared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Импорт бинарного файла"
+        android:layout_marginBottom="16dp" />
+
+    <!--pdf-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PDF отчет:"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/btnGeneratePdfApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Создать PDF отчет"
+        android:layout_marginBottom="8dp" />
+
+    <!--инфа о файлах-->
+    <Button
+        android:id="@+id/btnShowFilesInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Показать информацию о файлах"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

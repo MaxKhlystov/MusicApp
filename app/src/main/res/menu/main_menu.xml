@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_songs_list"
+        android:title="Список песен"
+        android:icon="@android:drawable/ic_menu_view" />
+    <item
+        android:id="@+id/menu_analytics"
+        android:title="Анализ коллекции"
+        android:icon="@android:drawable/ic_menu_view"/>
+    <item
+        android:id="@+id/menu_search"
+        android:title="Поиск музыки"
+        android:icon="@android:drawable/ic_menu_search"/>
+</menu>
